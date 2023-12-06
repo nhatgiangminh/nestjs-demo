@@ -22,7 +22,7 @@ export class UserController {
   async getUser(@Param('id') id: string) {
     const user = await this.userService.getUserById(id)
     if (!user) {
-      throw new HttpException('User is not exist', HttpStatus.BAD_REQUEST)
+      throw new HttpException('User does not exist', HttpStatus.BAD_REQUEST)
     }
     return {
       message: 'SUCCESS',
